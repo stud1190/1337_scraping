@@ -4,7 +4,7 @@ from scrapy.linkextractors import LinkExtractor
 
 class CrawlerxSpider(CrawlSpider):
     '''
-    ejfwaeif
+    Spider for crawling 1337x website
     '''
     name = "crawlerx"
     allowed_domains = ["1337x.to"]
@@ -18,13 +18,14 @@ class CrawlerxSpider(CrawlSpider):
     def Q(self, response, attr, nest=''):
         query = f'//ul[@class="list"]/li[strong/text()="{attr}"]/span{nest}/text()'
         return response.xpath(query).get()
-    
+
     def extract_magnet(self, response):
         list_item = response.css('main.container div.row ul li')
-        result = list_item.xpath('a[contains(@href, "magnet:") and contains(text(), "Magnet Download")]/@href')
+        result = list_item.xpath(
+            'a[contains(@href, "magnet:") and contains(text(), "Magnet Download")]/@href')
         if len(result) != 1:
             return None
-        return result.get();
+        return result.get()
 
     def image_urls(self, response):
         active_tab_pane = response.css('div#description.tab-pane.active')

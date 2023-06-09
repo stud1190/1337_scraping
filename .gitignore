@@ -1,4 +1,5 @@
 /1337x/
 urls.jsonl
+*.tar.xz
 __pycache__
 /spiderx/sample_pages/
