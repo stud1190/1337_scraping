@@ -12,7 +12,6 @@ BOT_NAME = "spiderx"
 SPIDER_MODULES = ["spiderx.spiders"]
 NEWSPIDER_MODULE = "spiderx.spiders"
 
-
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 USER_AGENT = "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)"
 

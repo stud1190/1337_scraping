@@ -1,6 +1,6 @@
 /1337x/
-output.jsonl
-urls.jsonl
+*.jsonl
 *.tar.xz
 __pycache__
 /spiderx/sample_pages/
+/scrapy_cache/
